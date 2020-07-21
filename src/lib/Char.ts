@@ -61,7 +61,7 @@ export function getLatin1UnicodeCategory(code: number): UnicodeCategory {
 
 /** Returns a boolean indicating whether character c is considered to be a digit. */
 const asciiZeroCode = '0'.charCodeAt(0);
-const asciiNineCode = '9'.charCodeAt(9);
+const asciiNineCode = '9'.charCodeAt(0);
 export function isDigit(code: number) {
 	if (isLatin1(code)) {
 		return isInRange(code, asciiZeroCode, asciiNineCode);
