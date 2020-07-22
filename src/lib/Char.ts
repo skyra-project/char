@@ -45,13 +45,49 @@ const kLatin1CharInfo = [
 	0x21, 0x21, 0x21, 0x21, 0x21, 0x21, 0x21, 0x19, 0x21, 0x21, 0x21, 0x21, 0x21, 0x21, 0x21, 0x21 // U+00F0..U+00FF
 ] as const;
 
-// Return true for all characters below or equal U+00ff, which is ASCII + Latin-1 Supplement.
-export function isLatin1(code: number) {
+/**
+ * Returns the code point of a character.
+ * @see fromCode
+ * @example
+ * getCode('a'); // -> 97
+ * fromCode(97); // -> 'a'
+ *
+ * @example
+ * getCode('💯'); // -> 128175
+ * fromCode(128175); // -> '💯'
+ */
+export function getCode(char: string): number {
+	return char.codePointAt(0)!;
+}
+
+/**
+ * Returns the character from a code point.
+ * @see getCode
+ * @example
+ * fromCode(97); // -> 'a'
+ * getCode('a'); // -> 97
+ *
+ * @example
+ * fromCode(128175); // -> '💯'
+ * getCode('💯'); // -> 128175
+ */
+export function fromCode(code: number): string {
+	return String.fromCodePoint(code);
+}
+
+/**
+ * Return true for all characters below or equal U+00ff, which is ASCII + Latin-1 Supplement.
+ * @param code The code point.
+ * @example
+ * isLatin('a'); // true
+ * isLatin('💯'); // false
+ */
+export function isLatin1(code: number): boolean {
 	return code < kLatin1CharInfo.length;
 }
 
 // Return true for all characters below or equal U+007f, which is ASCII.
-export function isAscii(code: number) {
+export function isAscii(code: number): boolean {
 	return code <= 0x007f;
 }
 
@@ -69,7 +105,7 @@ export function isDigit(code: number) {
 	}
 }
 
-export function isInRange(code: number, minimum: number, maximum: number) {
+function isInRange(code: number, minimum: number, maximum: number) {
 	return code - minimum <= maximum - minimum;
 }
 
