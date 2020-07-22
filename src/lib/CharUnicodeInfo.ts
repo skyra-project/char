@@ -12,17 +12,11 @@ import {
 } from './CharUnicodeInfoData';
 import type { UnicodeCategory } from './UnicodeCategory';
 
-export const HIGH_SURROGATE_START = 0xD800;
-export const HIGH_SURROGATE_END = 0xDBFF;
-export const LOW_SURROGATE_START = 0xDC00;
-export const LOW_SURROGATE_END = 0xDFFF;
-export const HIGH_SURROGATE_RANGE = 0x03FF;
-
-export const UNICODE_CATEGORY_OFFSET = 0;
-export const BIDI_CATEGORY_OFFSET = 1;
-
-// The starting codepoint for Unicode plane 1.  Plane 1 contains 0x010000 ~ 0x01ffff.
-export const UNICODE_PLANE01_START = 0x10000;
+export const kHighSurrogateStart = 0xd800;
+export const kHighSurrogateEnd = 0xdbff;
+export const kLowSurrogateStart = 0xdc00;
+export const kLowSurrogateEnd = 0xdfff;
+export const kHighSurrogateRange = 0x03ff;
 
 export function getUnicodeCategory(code: number): UnicodeCategory {
 	return getUnicodeCategoryNoBoundsChecks(code);
@@ -32,7 +26,7 @@ function getUnicodeCategoryNoBoundsChecks(code: number): UnicodeCategory {
 	const offset = getCategoryCasingTableOffsetNoBoundsChecks(code);
 
 	// Each entry of the 'CategoriesValues' table uses the low 5 bits to store the UnicodeCategory information.
-	return categoriesValues[offset] & 0x1F;
+	return categoriesValues[offset] & 0x1f;
 }
 
 /**
@@ -51,7 +45,7 @@ function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
-	return categoryCasingLevel2Index[(index << 4) + (code & 0x0F)];
+	return categoryCasingLevel2Index[(index << 4) + (code & 0x0f)];
 }
 
 /**
@@ -90,5 +84,5 @@ function getNumericGraphemeTableOffsetNoBoundsChecks(code: number): number {
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
-	return numericGraphemeLevel3Index[(index << 4) + (code & 0x0F)];
+	return numericGraphemeLevel3Index[(index << 4) + (code & 0x0f)];
 }
