@@ -2,14 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // https://github.com/dotnet/runtime/blob/master/src/libraries/System.Private.CoreLib/src/System/Globalization/CharUnicodeInfo.cs
 
-import {
-	categoriesValues,
-	categoryCasingLevel2Index,
-	numericGraphemeLevel1Index,
-	numericGraphemeLevel2Index,
-	numericGraphemeLevel3Index,
-	numericValues
-} from './CharUnicodeInfoData';
+import { categoryCasingLevel1Index } from './CharUnicodeInfo/CasingDataLevel1';
+import { categoryCasingLevel2Index } from './CharUnicodeInfo/CasingDataLevel2';
+import { categoryCasingLevel3Index } from './CharUnicodeInfo/CasingDataLevel3';
+import { categoriesValues } from './CharUnicodeInfo/CategoriesValues';
+import { numericGraphemeLevel1Index } from './CharUnicodeInfo/NumericGrapheneDataLevel1';
+import { numericGraphemeLevel2Index } from './CharUnicodeInfo/NumericGrapheneDataLevel2';
+import { numericGraphemeLevel3Index } from './CharUnicodeInfo/NumericGrapheneDataLevel3';
+import { numericValues } from './CharUnicodeInfo/NumericValues';
 import type { UnicodeCategory } from './UnicodeCategory';
 
 export const kHighSurrogateStart = 0xd800;
@@ -36,7 +36,7 @@ function getUnicodeCategoryNoBoundsChecks(code: number): UnicodeCategory {
  */
 function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level index item from the high 11 bits of the code point.
-	let index = categoryCasingLevel2Index[code >> 9] as number;
+	let index = categoryCasingLevel1Index[code >> 9] as number;
 
 	// Get the level 2 WORD offset from the next 5 bits of the code point.
 	// This provides the base offset of the level 3 table.
@@ -45,7 +45,7 @@ function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
-	return categoryCasingLevel2Index[(index << 4) + (code & 0x0f)];
+	return categoryCasingLevel3Index[(index << 4) + (code & 0x0f)];
 }
 
 /**
