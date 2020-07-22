@@ -1,6 +1,6 @@
-import { highSurrogates } from 'lib/HighSurrogatesData';
-import { lowSurrogates } from 'lib/LowSurrogatesData';
-import { nonSurrogates } from 'lib/NonSurrogatesData';
+import { highSurrogates } from './lib/HighSurrogatesData';
+import { lowSurrogates } from './lib/LowSurrogatesData';
+import { nonSurrogates } from './lib/NonSurrogatesData';
 import { fromCode, isHighSurrogate } from '../src';
 
 describe('isHighSurrogate', () => {
