@@ -2,10 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // https://github.com/dotnet/runtime/blob/master/src/libraries/System.Private.CoreLib/src/System/Globalization/CharUnicodeInfo.cs
 
-import { categoryCasingLevel1Index } from './CharUnicodeInfo/CasingDataLevel1';
-import { categoryCasingLevel2Index } from './CharUnicodeInfo/CasingDataLevel2';
-import { categoryCasingLevel3Index } from './CharUnicodeInfo/CasingDataLevel3';
 import { categoriesValues } from './CharUnicodeInfo/CategoriesValues';
+import { categoryCasingLevel1Index } from './CharUnicodeInfo/CategoryCasingDataLevel1';
+import { categoryCasingLevel2Index } from './CharUnicodeInfo/CategoryCasingDataLevel2';
+import { categoryCasingLevel3Index } from './CharUnicodeInfo/CategoryCasingDataLevel3';
 import { numericGraphemeLevel1Index } from './CharUnicodeInfo/NumericGrapheneDataLevel1';
 import { numericGraphemeLevel2Index } from './CharUnicodeInfo/NumericGrapheneDataLevel2';
 import { numericGraphemeLevel3Index } from './CharUnicodeInfo/NumericGrapheneDataLevel3';
