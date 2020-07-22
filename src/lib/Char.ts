@@ -154,6 +154,22 @@ export function isLower(code: number) {
 	return CharUnicodeInfo.getUnicodeCategory(code) === UnicodeCategory.LowercaseLetter;
 }
 
+function checkNumber(category: UnicodeCategory) {
+	return isInRange(category, UnicodeCategory.DecimalDigitNumber, UnicodeCategory.OtherNumber);
+}
+
+export function isNumber(code: number) {
+	if (isLatin1(code)) {
+		if (isAscii(code)) {
+			return isInRange(code, asciiZeroCode, asciiNineCode);
+		}
+
+		return checkNumber(getLatin1UnicodeCategory(code));
+	}
+
+	return checkNumber(CharUnicodeInfo.getUnicodeCategory(code));
+}
+
 function checkPunctuation(category: UnicodeCategory) {
 	return isInRange(category, UnicodeCategory.ConnectorPunctuation, UnicodeCategory.OtherPunctuation);
 }
