@@ -3,12 +3,81 @@
 A character utility library with ASCII, Latin-1, and UTF-8 support based on [.NET][]'s `char` struct, all credits to the
 [.NET][] community and thanks to the [Discord C# Community][] for helping me understand the low-level unsafe logic.
 
-## License
+[![GitHub](https://img.shields.io/github/license/skyra-project/char)](https://github.com/skyra-project/char/blob/main/LICENSE.md)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/skyra-project/char.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/skyra-project/char/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/skyra-project/char.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/skyra-project/char/context:javascript)
+[![Coverage Status](https://coveralls.io/repos/github/skyra-project/char/badge.svg?branch=main)](https://coveralls.io/github/skyra-project/char?branch=main)
+[![Depfu](https://badges.depfu.com/badges/e367f2c68b857253ca23e1e8d73d1e14/count.svg)](https://depfu.com/github/skyra-project/char?project_id=14147)
+
+[![npm](https://img.shields.io/npm/v/@skyra/char?color=crimson&label=NPM&logo=npm&style=flat-square)](https://www.npmjs.com/package/@skyra/char)
+![npm bundle size minified (scoped)](https://img.shields.io/bundlephobia/min/@skyra/char?label=minified&logo=webpack)
+![npm bundle size minzipped (scoped)](https://img.shields.io/bundlephobia/minzip/@skyra/char?label=minified&logo=webpack)
+
+**Table of Contents**
+
+-   [@skyra/char](#skyrachar)
+    -   [Features](#features)
+    -   [Installation and Usage](#installation-and-usage)
+        -   [Package managers](#package-managers)
+            -   [Usage](#usage)
+        -   [Browser build](#browser-build)
+            -   [Usage](#usage-1)
+    -   [Meta](#meta)
+        -   [License](#license)
+        -   [Contributing](#contributing)
+        -   [Buy us some doughnuts](#buy-us-some-doughnuts)
+        -   [Contributors ✨](#contributors-%E2%9C%A8)
+
+## Features
+
+-   Designed based on [.NET][]'s `char` struct.
+-   Supports both NodeJS and Browsers by providing CommonJS, ES Module and UMD bundles.
+
+## Installation and Usage
+
+### Package managers
+
+```bash
+yarn add @skyra/char
+# or npm install @skyra/char
+```
+
+#### Usage
+
+```js
+const { fromCode } = require('@skyra/char');
+```
+
+```ts
+import { fromCode } from '@skyra/char';
+```
+
+### Browser build
+
+If you want to use the browser build you can pull it in directly via unpkg. Note that when using a Framework such as React, Vue or Angular we recommend you refer to [Package managers](#package-managers)
+
+```html
+<script src="https://unpkg.com/@skyra/char"></script>
+```
+
+#### Usage
+
+The UMD module is exported with the name of `SkyraChar`:
+
+```html
+<script>
+	SkyraChar.fromCode();
+</script>
+```
+
+## Meta
+
+### License
 
 Copyright © 2020, [Skyra Project](https://github.com/skyra-project).
 Released under the [MIT License](LICENSE.md).
 
-## Contributing
+### Contributing
 
 1. Fork it!
 1. Create your feature branch: `git checkout -b my-new-feature`
@@ -16,7 +85,7 @@ Released under the [MIT License](LICENSE.md).
 1. Push to the branch: `git push origin my-new-feature`
 1. Submit a pull request!
 
-## Buy us some doughnuts
+### Buy us some doughnuts
 
 Skyra Project is open source and always will be, even if we don't get donations. That said, we know there are amazing people who
 may still want to donate just to show their appreciation. Thanks you very much in advance!
@@ -31,15 +100,15 @@ We accept donations through Patreon, BitCoin, Ethereum, and Litecoin. You can us
 |  Ethereum   | ![EthereumImage][] | [0xcB5EDB76Bc9E389514F905D9680589004C00190c](ethereum:0xcB5EDB76Bc9E389514F905D9680589004C00190c?amount=0.01&label=Skyra%20Discord%20Bot) |
 |  Litecoin   | ![LitecoinImage][] |         [MNVT1keYGMfGp7vWmcYjCS8ntU8LNvjnqM](litecoin:MNVT1keYGMfGp7vWmcYjCS8ntU8LNvjnqM?amount=0.01&label=Skyra%20Discord%20Bot)         |
 
-[.NET]: https://github.com/dotnet
-[Discord C# Community]: https://discord.gg/csharp
+[.net]: https://github.com/dotnet
+[discord c# community]: https://discord.gg/csharp
 [patreonimage]: https://cdn.skyra.pw/gh-assets/patreon.png
 [paypalimage]: https://cdn.skyra.pw/gh-assets/paypal.png
 [bitcoinimage]: https://cdn.skyra.pw/gh-assets/bitcoin.png
 [ethereumimage]: https://cdn.skyra.pw/gh-assets/ethereum.png
 [litecoinimage]: https://cdn.skyra.pw/gh-assets/litecoin.png
 
-## Contributors ✨
+### Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -57,6 +126,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
