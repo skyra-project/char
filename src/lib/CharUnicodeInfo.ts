@@ -26,7 +26,7 @@ function getUnicodeCategoryNoBoundsChecks(code: number): UnicodeCategory {
 	const offset = getCategoryCasingTableOffsetNoBoundsChecks(code);
 
 	// Each entry of the 'CategoriesValues' table uses the low 5 bits to store the UnicodeCategory information.
-	return categoriesValues.readInt8(offset) & 0x1f;
+	return categoriesValues.readUInt8(offset) & 0x1f;
 }
 
 /**
@@ -36,7 +36,7 @@ function getUnicodeCategoryNoBoundsChecks(code: number): UnicodeCategory {
  */
 function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level index item from the high 11 bits of the code point.
-	let index = categoryCasingLevel1Index[code >> 9] as number;
+	let index = categoryCasingLevel1Index.readUInt8(code >> 9);
 
 	// Get the level 2 WORD offset from the next 5 bits of the code point.
 	// This provides the base offset of the level 3 table.
@@ -45,7 +45,7 @@ function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
-	return categoryCasingLevel3Index[(index << 4) + (code & 0x0f)];
+	return categoryCasingLevel3Index.readUInt8((index << 4) + (code & 0x0f));
 }
 
 /**
@@ -75,7 +75,7 @@ function getNumericValueNoBoundsCheck(code: number): number {
 
 function getNumericGraphemeTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level index item from the high 11 bits of the code point.
-	let index = numericGraphemeLevel1Index[code >> 9] as number;
+	let index = numericGraphemeLevel1Index.readUInt8(code >> 9);
 
 	// Get the level 2 WORD offset from the next 5 bits of the code point.
 	// This provides the base offset of the level 3 table.
@@ -84,5 +84,5 @@ function getNumericGraphemeTableOffsetNoBoundsChecks(code: number): number {
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
-	return numericGraphemeLevel3Index[(index << 4) + (code & 0x0f)];
+	return numericGraphemeLevel3Index.readUInt8((index << 4) + (code & 0x0f));
 }
