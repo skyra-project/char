@@ -110,7 +110,7 @@ We accept donations through Patreon, BitCoin, Ethereum, and Litecoin. You can us
 
 ### Contributors ✨
 
-My thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Our thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
