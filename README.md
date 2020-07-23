@@ -30,7 +30,7 @@ A character utility library with ASCII, Latin-1, and UTF-8 support based on [.NE
 
 ## Features
 
--   Designed based on [.NET][]'s `char` struct.
+-   Design based on [.NET][]'s `char` struct.
 -   Supports both NodeJS and Browsers by providing CommonJS, ES Module and UMD bundles.
 
 ## Installation and Usage
