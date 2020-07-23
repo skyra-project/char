@@ -1,4 +1,8 @@
-import { UnicodeCategory } from '../../src';
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// https://github.com/dotnet/runtime/blob/master/src/libraries/System.Runtime/tests/System/CharTests.cs
+
+import { fromCode, UnicodeCategory } from '../../src';
 
 const kLatinTestSet = [
 	[0x0047, 0x004c, 0x0051, 0x0056, 0x00c0, 0x00c5, 0x00ca, 0x00cf, 0x00d4, 0x00da], // UnicodeCategory.UppercaseLetter
@@ -96,4 +100,8 @@ export function shouldTestCasingForChar(code: number, category: UnicodeCategory)
 		(code >= lowerCaseA && code <= lowerCaseZ) ||
 		(code >= upperCaseA && code <= upperCaseZ)
 	);
+}
+
+export function display(code: number) {
+	return `["${fromCode(code)}" 0x${code.toString(16).padStart(4, '0')}]`;
 }
