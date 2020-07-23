@@ -1,7 +1,7 @@
+import { fromCode, isLowSurrogate } from '../src';
 import { highSurrogates } from './lib/HighSurrogatesData';
 import { lowSurrogates } from './lib/LowSurrogatesData';
 import { nonSurrogates } from './lib/NonSurrogatesData';
-import { fromCode, isLowSurrogate } from '../src';
 
 describe('isLowSurrogate', () => {
 	for (const code of lowSurrogates) {

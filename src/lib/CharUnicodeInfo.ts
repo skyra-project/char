@@ -41,7 +41,8 @@ function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level 2 WORD offset from the next 5 bits of the code point.
 	// This provides the base offset of the level 3 table.
 	// Note that & has lower precedence than +, so remember the parens.
-	index = categoryCasingLevel2Index[(index << 6) + ((code >> 3) & 0b0011_1110)];
+	const offset = (index << 6) + ((code >> 3) & 0b0011_1110);
+	index = (categoryCasingLevel2Index[offset + 1] << 8) + categoryCasingLevel2Index[offset];
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
@@ -80,7 +81,8 @@ function getNumericGraphemeTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level 2 WORD offset from the next 5 bits of the code point.
 	// This provides the base offset of the level 3 table.
 	// Note that & has lower precedence than +, so remember the parens.
-	index = numericGraphemeLevel2Index[(index << 6) + ((code >> 3) & 0b0011_1110)];
+	const offset = (index << 6) + ((code >> 3) & 0b0011_1110);
+	index = (numericGraphemeLevel2Index[offset + 1] << 8) + numericGraphemeLevel2Index[offset];
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
