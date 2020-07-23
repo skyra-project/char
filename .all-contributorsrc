@@ -30,7 +30,8 @@
       "contributions": [
         "infra",
         "test",
-        "doc"
+        "doc",
+        "platform"
       ]
     },
     {
