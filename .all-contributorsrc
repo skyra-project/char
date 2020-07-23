@@ -29,7 +29,9 @@
       "profile": "https://favware.tech/",
       "contributions": [
         "infra",
-        "test"
+        "test",
+        "doc",
+        "platform"
       ]
     },
     {

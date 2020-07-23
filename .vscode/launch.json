@@ -6,9 +6,7 @@
 			"name": "Jest",
 			"request": "launch",
 			"program": "${workspaceFolder}/node_modules/jest/bin/jest",
-			"args": [
-				"--runInBand"
-			],
+			"args": ["--runInBand"],
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
 			"internalConsoleOptions": "neverOpen",
