@@ -52,7 +52,7 @@ import { fromCode } from '@skyra/char';
 
 ### Browser build
 
-If you want to use the browser build you can pull it in directly via unpkg. Note that when using a Framework such as React, Vue or Angular we recommend you refer to [the package managers section](#package-managers)
+If you want to use the browser build you can pull it directly via unpkg. Note that when using a Framework such as React, Vue or Angular we recommend you refer to [the package managers section](#package-managers)
 
 ```html
 <script src="https://unpkg.com/@skyra/char"></script>
