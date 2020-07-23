@@ -68,13 +68,12 @@ jobs:
             - name: Install Dependencies
               run: yarn --frozen-lockfile
             - name: Run tests
-              run: yarn test
-              # run: yarn test --coverage
-            # - name: Store code coverage report
-            #   uses: actions/upload-artifact@v2-preview
-            #   with:
-            #       name: coverage
-            #       path: coverage/
+              run: yarn test --coverage
+            - name: Store code coverage report
+              uses: actions/upload-artifact@v2-preview
+              with:
+                  name: coverage
+                  path: coverage/
 
     Building:
         name: Compile source code
@@ -99,19 +98,19 @@ jobs:
               with:
                   build: src
 
-    # Upload_Coverage_Report:
-    #     name: Upload coverage report to coveralls
-    #     needs: [Testing]
-    #     runs-on: ubuntu-latest
-    #     steps:
-    #         - name: Checkout Project
-    #           uses: actions/checkout@v2
-    #         - name: Download Coverage report
-    #           uses: actions/download-artifact@v2-preview
-    #           with:
-    #               name: coverage
-    #               path: coverage/
-    #         - name: Coveralls Upload
-    #           uses: coverallsapp/github-action@master
-    #           with:
-    #               github-token: ${{ secrets.GITHUB_TOKEN }}
+    Upload_Coverage_Report:
+        name: Upload coverage report to coveralls
+        needs: [Testing]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Project
+              uses: actions/checkout@v2
+            - name: Download Coverage report
+              uses: actions/download-artifact@v2-preview
+              with:
+                  name: coverage
+                  path: coverage/
+            - name: Coveralls Upload
+              uses: coverallsapp/github-action@master
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
