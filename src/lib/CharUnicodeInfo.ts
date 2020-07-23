@@ -26,7 +26,7 @@ function getUnicodeCategoryNoBoundsChecks(code: number): UnicodeCategory {
 	const offset = getCategoryCasingTableOffsetNoBoundsChecks(code);
 
 	// Each entry of the 'CategoriesValues' table uses the low 5 bits to store the UnicodeCategory information.
-	return categoriesValues[offset] & 0x1f;
+	return categoriesValues.readInt8(offset) & 0x1f;
 }
 
 /**
@@ -41,8 +41,7 @@ function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level 2 WORD offset from the next 5 bits of the code point.
 	// This provides the base offset of the level 3 table.
 	// Note that & has lower precedence than +, so remember the parens.
-	const offset = (index << 6) + ((code >> 3) & 0b0011_1110);
-	index = (categoryCasingLevel2Index[offset + 1] << 8) + categoryCasingLevel2Index[offset];
+	index = categoryCasingLevel2Index.readUInt16LE((index << 6) + ((code >> 3) & 0b0011_1110));
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
@@ -57,7 +56,7 @@ export function getIsWhiteSpace(code: number): boolean {
 	const offset = getCategoryCasingTableOffsetNoBoundsChecks(code);
 
 	// High bit of each value in the 'CategoriesValues' array denotes whether this code point is white space.
-	return categoriesValues[offset] < 0;
+	return categoriesValues.readInt8(offset) < 0;
 }
 
 /**
@@ -71,7 +70,7 @@ export function getNumericValue(code: number): number {
 
 function getNumericValueNoBoundsCheck(code: number): number {
 	const offset = getNumericGraphemeTableOffsetNoBoundsChecks(code);
-	return numericValues[offset * 8];
+	return numericValues.readDoubleLE(offset * 8);
 }
 
 function getNumericGraphemeTableOffsetNoBoundsChecks(code: number): number {
@@ -81,8 +80,7 @@ function getNumericGraphemeTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level 2 WORD offset from the next 5 bits of the code point.
 	// This provides the base offset of the level 3 table.
 	// Note that & has lower precedence than +, so remember the parens.
-	const offset = (index << 6) + ((code >> 3) & 0b0011_1110);
-	index = (numericGraphemeLevel2Index[offset + 1] << 8) + numericGraphemeLevel2Index[offset];
+	index = numericGraphemeLevel2Index.readUInt16LE((index << 6) + ((code >> 3) & 0b0011_1110));
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
