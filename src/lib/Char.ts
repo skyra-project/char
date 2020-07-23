@@ -106,7 +106,7 @@ export function isDigit(code: number) {
 }
 
 function isInRange(code: number, minimum: number, maximum: number) {
-	return code - minimum <= maximum - minimum;
+	return minimum <= code && code <= maximum;
 }
 
 function checkLetter(category: UnicodeCategory) {
@@ -152,6 +152,22 @@ export function isLower(code: number) {
 		return (kLatin1CharInfo[code] & kIsLowerCaseLetterFlag) !== 0;
 	}
 	return CharUnicodeInfo.getUnicodeCategory(code) === UnicodeCategory.LowercaseLetter;
+}
+
+function checkNumber(category: UnicodeCategory) {
+	return isInRange(category, UnicodeCategory.DecimalDigitNumber, UnicodeCategory.OtherNumber);
+}
+
+export function isNumber(code: number) {
+	if (isLatin1(code)) {
+		if (isAscii(code)) {
+			return isInRange(code, asciiZeroCode, asciiNineCode);
+		}
+
+		return checkNumber(getLatin1UnicodeCategory(code));
+	}
+
+	return checkNumber(CharUnicodeInfo.getUnicodeCategory(code));
 }
 
 function checkPunctuation(category: UnicodeCategory) {
@@ -247,7 +263,8 @@ export function isSurrogatePair(highSurrogate: number, lowSurrogate: number) {
 	// by baselining each value to the start of its respective range and taking
 	// the logical OR of them.
 
-	const highSurrogateOffset = highSurrogate - CharUnicodeInfo.kHighSurrogateStart;
-	const lowSurrogateOffset = lowSurrogate - CharUnicodeInfo.kLowSurrogateStart;
-	return (highSurrogateOffset | lowSurrogateOffset) <= CharUnicodeInfo.kHighSurrogateRange;
+	const highSurrogateOffset = (highSurrogate - CharUnicodeInfo.kHighSurrogateStart) >>> 0;
+	const lowSurrogateOffset = (lowSurrogate - CharUnicodeInfo.kLowSurrogateStart) >>> 0;
+	const baseline = (highSurrogateOffset | lowSurrogateOffset) >>> 0;
+	return baseline <= CharUnicodeInfo.kHighSurrogateRange;
 }
