@@ -1,8 +1,5 @@
 # @skyra/char
 
-A character utility library with ASCII, Latin-1, and UTF-8 support based on [.NET][]'s `char` struct, all credits to the
-[.NET][] community and thanks to the [Discord C# Community][] for helping me understand the low-level unsafe logic.
-
 [![GitHub](https://img.shields.io/github/license/skyra-project/char)](https://github.com/skyra-project/char/blob/main/LICENSE.md)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/skyra-project/char.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/skyra-project/char/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/skyra-project/char.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/skyra-project/char/context:javascript)
@@ -16,7 +13,7 @@ A character utility library with ASCII, Latin-1, and UTF-8 support based on [.NE
 **Table of Contents**
 
 -   [@skyra/char](#skyrachar)
-    -   [Features](#features)
+    -   [About](#about)
     -   [Installation and Usage](#installation-and-usage)
         -   [Package managers](#package-managers)
             -   [Usage](#usage)
@@ -28,9 +25,10 @@ A character utility library with ASCII, Latin-1, and UTF-8 support based on [.NE
         -   [Buy us some doughnuts](#buy-us-some-doughnuts)
         -   [Contributors ✨](#contributors-%E2%9C%A8)
 
-## Features
+## About
 
--   Design based on [.NET][]'s `char` struct.
+-   @skyra/char is a character utility library with ASCII, Latin-1, and UTF-8 support based on [.NET][]'s `char` struct, all credits to the
+    [.NET][] community and thanks to the [Discord C# Community][] for helping us understand the low-level unsafe logic.
 -   Supports both NodeJS and Browsers by providing CommonJS, ES Module and UMD bundles.
 
 ## Installation and Usage
@@ -126,6 +124,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
