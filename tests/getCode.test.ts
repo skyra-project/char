@@ -1,11 +1,10 @@
 import { getCode } from '../src';
 
 describe('getCode', () => {
-	test('GIVEN "a" THEN shows 97', () => {
-		expect(getCode('a')).toBe(97);
-	});
-
-	test('GIVEN "💯" THEN shows 128175', () => {
-		expect(getCode('💯')).toBe(128175);
+	test.each([
+		['a', 97],
+		['💯', 128175]
+	])('GIVEN "%s" THEN shows "%i"', (given, expected) => {
+		expect(getCode(given)).toBe(expected);
 	});
 });
