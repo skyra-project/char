@@ -1,8 +1,9 @@
 {
+	"inputFiles": ["./src"],
 	"out": "./docs/",
 	"readme": "./README.md",
 	"name": "@skyra/char",
-	"exclude": ["**/node_modules/**", "tests/**", "rollup.config.ts"],
+	"exclude": ["**/node_modules/**", "tests/**"],
 	"mode": "file",
 	"excludeExternals": true,
 	"excludePrivate": true,
