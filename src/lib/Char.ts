@@ -144,6 +144,8 @@ export function isDigit(code: number) {
 	if (isLatin1(code)) {
 		return isInRange(code, asciiZeroCode, asciiNineCode);
 	}
+
+	return CharUnicodeInfo.getUnicodeCategory(code) === UnicodeCategory.DecimalDigitNumber;
 }
 
 /** @hidden */
