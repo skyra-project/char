@@ -3,7 +3,7 @@
 	"out": "./docs/",
 	"readme": "./README.md",
 	"name": "@skyra/char",
-	"exclude": ["**/node_modules/**", "tests/**"],
+	"exclude": ["**/node_modules/**", "tests/**", "rollup.config.ts"],
 	"mode": "file",
 	"excludeExternals": true,
 	"excludePrivate": true,
