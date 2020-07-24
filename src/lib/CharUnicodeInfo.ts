@@ -10,6 +10,7 @@ import { numericGraphemeLevel1Index } from './CharUnicodeInfo/NumericGrapheneDat
 import { numericGraphemeLevel2Index } from './CharUnicodeInfo/NumericGrapheneDataLevel2';
 import { numericGraphemeLevel3Index } from './CharUnicodeInfo/NumericGrapheneDataLevel3';
 import { numericValues } from './CharUnicodeInfo/NumericValues';
+import { readDoubleLE, readInt8, readUInt16LE, readUInt8 } from './TypedArrayUtilities';
 import type { UnicodeCategory } from './UnicodeCategory';
 
 export const kHighSurrogateStart = 0xd800;
@@ -26,7 +27,7 @@ function getUnicodeCategoryNoBoundsChecks(code: number): UnicodeCategory {
 	const offset = getCategoryCasingTableOffsetNoBoundsChecks(code);
 
 	// Each entry of the 'CategoriesValues' table uses the low 5 bits to store the UnicodeCategory information.
-	return categoriesValues.readUInt8(offset) & 0x1f;
+	return readUInt8(categoriesValues, offset) & 0x1f;
 }
 
 /**
@@ -36,16 +37,16 @@ function getUnicodeCategoryNoBoundsChecks(code: number): UnicodeCategory {
  */
 function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level index item from the high 11 bits of the code point.
-	let index = categoryCasingLevel1Index.readUInt8(code >> 9);
+	let index = readUInt8(categoryCasingLevel1Index, code >> 9);
 
 	// Get the level 2 WORD offset from the next 5 bits of the code point.
 	// This provides the base offset of the level 3 table.
 	// Note that & has lower precedence than +, so remember the parens.
-	index = categoryCasingLevel2Index.readUInt16LE((index << 6) + ((code >> 3) & 0b0011_1110));
+	index = readUInt16LE(categoryCasingLevel2Index, (index << 6) + ((code >> 3) & 0b0011_1110));
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
-	return categoryCasingLevel3Index.readUInt8((index << 4) + (code & 0x0f));
+	return readUInt8(categoryCasingLevel3Index, (index << 4) + (code & 0x0f));
 }
 
 /**
@@ -56,7 +57,7 @@ export function getIsWhiteSpace(code: number): boolean {
 	const offset = getCategoryCasingTableOffsetNoBoundsChecks(code);
 
 	// High bit of each value in the 'CategoriesValues' array denotes whether this code point is white space.
-	return categoriesValues.readInt8(offset) < 0;
+	return readInt8(categoriesValues, offset) < 0;
 }
 
 /**
@@ -70,19 +71,19 @@ export function getNumericValue(code: number): number {
 
 function getNumericValueNoBoundsCheck(code: number): number {
 	const offset = getNumericGraphemeTableOffsetNoBoundsChecks(code);
-	return numericValues.readDoubleLE(offset * 8);
+	return readDoubleLE(numericValues, offset * 8);
 }
 
 function getNumericGraphemeTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level index item from the high 11 bits of the code point.
-	let index = numericGraphemeLevel1Index.readUInt8(code >> 9);
+	let index = readUInt8(numericGraphemeLevel1Index, code >> 9);
 
 	// Get the level 2 WORD offset from the next 5 bits of the code point.
 	// This provides the base offset of the level 3 table.
 	// Note that & has lower precedence than +, so remember the parens.
-	index = numericGraphemeLevel2Index.readUInt16LE((index << 6) + ((code >> 3) & 0b0011_1110));
+	index = readUInt16LE(numericGraphemeLevel2Index, (index << 6) + ((code >> 3) & 0b0011_1110));
 
 	// Get the result from the low 4 bits of the code point.
 	// This is the offset into the values table where the data is stored.
-	return numericGraphemeLevel3Index.readUInt8((index << 4) + (code & 0x0f));
+	return readUInt8(numericGraphemeLevel3Index, (index << 4) + (code & 0x0f));
 }
