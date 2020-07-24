@@ -5,17 +5,6 @@
 import * as CharUnicodeInfo from './CharUnicodeInfo';
 import { UnicodeCategory } from './UnicodeCategory';
 
-/**
- * The maximum character value.
- * @since 1.0.0
- */
-export const kMaxValue = 0xffff;
-/**
- * The minimum character value.
- * @since 1.0.0
- */
-export const kMinValue = 0x00;
-
 /** @hidden */
 const kIsWhiteSpaceFlag = 0x80;
 
@@ -144,6 +133,8 @@ export function isDigit(code: number) {
 	if (isLatin1(code)) {
 		return isInRange(code, asciiZeroCode, asciiNineCode);
 	}
+
+	return CharUnicodeInfo.getUnicodeCategory(code) === UnicodeCategory.DecimalDigitNumber;
 }
 
 /** @hidden */
