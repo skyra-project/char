@@ -1,4 +1,5 @@
-export function endianness(): 'BE' | 'LE' {
+/** @hidden */
+function endianness(): 'BE' | 'LE' {
 	const a = new ArrayBuffer(2);
 	const b = new Uint8Array(a);
 	const c = new Uint16Array(a);
@@ -10,23 +11,32 @@ export function endianness(): 'BE' | 'LE' {
 	throw new Error('unable to figure out endianess');
 }
 
+/** @hidden */
 const bigEndian = endianness() === 'BE';
+
+/** @hidden */
 const float64Array = new Float64Array(1);
+
+/** @hidden */
 const uInt8Float64Array = new Uint8Array(float64Array.buffer);
 
+/** @hidden */
 export function readUInt8(array: Uint8Array, offset: number) {
 	return array[offset];
 }
 
+/** @hidden */
 export function readInt8(array: Uint8Array, offset: number) {
 	const value = array[offset];
 	return value | ((value & (2 ** 7)) * 0x1fffffe);
 }
 
+/** @hidden */
 export function readUInt16LE(array: Uint8Array, offset: number) {
 	return array[offset] | (array[offset + 1] << 8);
 }
 
+/** @hidden */
 function readDoubleBackwards(array: Uint8Array, offset: number) {
 	uInt8Float64Array[7] = array[offset];
 	uInt8Float64Array[6] = array[offset + 1];
@@ -39,6 +49,7 @@ function readDoubleBackwards(array: Uint8Array, offset: number) {
 	return float64Array[0];
 }
 
+/** @hidden */
 function readDoubleForwards(array: Uint8Array, offset: number) {
 	uInt8Float64Array[0] = array[offset];
 	uInt8Float64Array[1] = array[offset + 1];
@@ -51,4 +62,5 @@ function readDoubleForwards(array: Uint8Array, offset: number) {
 	return float64Array[0];
 }
 
+/** @hidden */
 export const readDoubleLE = bigEndian ? readDoubleBackwards : readDoubleForwards;

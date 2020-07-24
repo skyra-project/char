@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // https://github.com/dotnet/runtime/blob/master/src/libraries/System.Private.CoreLib/src/System/Globalization/CharUnicodeInfoData.cs
 
+/** @hidden */
 // prettier-ignore
 export const categoriesValues = new Uint8Array([
 	0x0e, 0x8e, 0x8b, 0x18, 0x1a, 0x14, 0x15, 0x19, 0x13, 0x08, 0x20, 0x1b, 0x12, 0x21, 0x1c, 0x24,

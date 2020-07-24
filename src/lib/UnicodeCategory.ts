@@ -2,6 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // https://github.com/dotnet/runtime/blob/master/src/libraries/System.Private.CoreLib/src/System/Globalization/UnicodeCategory.cs
 
+/**
+ * The unicode categories.
+ * @since 1.0.0
+ */
 export const enum UnicodeCategory {
 	UppercaseLetter = 0,
 	LowercaseLetter = 1,

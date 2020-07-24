@@ -13,16 +13,27 @@ import { numericValues } from './CharUnicodeInfo/NumericValues';
 import { readDoubleLE, readInt8, readUInt16LE, readUInt8 } from './TypedArrayUtilities';
 import type { UnicodeCategory } from './UnicodeCategory';
 
+/** @hidden */
 export const kHighSurrogateStart = 0xd800;
+
+/** @hidden */
 export const kHighSurrogateEnd = 0xdbff;
+
+/** @hidden */
 export const kLowSurrogateStart = 0xdc00;
+
+/** @hidden */
 export const kLowSurrogateEnd = 0xdfff;
+
+/** @hidden */
 export const kHighSurrogateRange = 0x03ff;
 
+/** @hidden */
 export function getUnicodeCategory(code: number): UnicodeCategory {
 	return getUnicodeCategoryNoBoundsChecks(code);
 }
 
+/** @hidden */
 function getUnicodeCategoryNoBoundsChecks(code: number): UnicodeCategory {
 	const offset = getCategoryCasingTableOffsetNoBoundsChecks(code);
 
@@ -34,6 +45,7 @@ function getUnicodeCategoryNoBoundsChecks(code: number): UnicodeCategory {
  * Retrieves the offset into the "CategoryCasing" arrays where this code point's
  * information is stored. Used for getting the Unicode category, bidi information,
  * and whitespace information.
+ * @hidden
  */
 function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level index item from the high 11 bits of the code point.
@@ -52,6 +64,7 @@ function getCategoryCasingTableOffsetNoBoundsChecks(code: number): number {
 /**
  * Data derived from https://unicode.org/reports/tr44/#White_Space. Represents whether a code point
  * is listed as White_Space per PropList.txt.
+ * @hidden
  */
 export function getIsWhiteSpace(code: number): boolean {
 	const offset = getCategoryCasingTableOffsetNoBoundsChecks(code);
@@ -64,16 +77,19 @@ export function getIsWhiteSpace(code: number): boolean {
  * Data derived from https://www.unicode.org/reports/tr44/#UnicodeData.txt. If Numeric_Type=Decimal
  * or Numeric_Type=Digit or Numeric_Type=Numeric, then retrieves the Numeric_Value for this code point.
  * Otherwise returns -1. This data is encoded in field 8 of UnicodeData.txt.
+ * @hidden
  */
 export function getNumericValue(code: number): number {
 	return getNumericValueNoBoundsCheck(code);
 }
 
+/** @hidden */
 function getNumericValueNoBoundsCheck(code: number): number {
 	const offset = getNumericGraphemeTableOffsetNoBoundsChecks(code);
 	return readDoubleLE(numericValues, offset * 8);
 }
 
+/** @hidden */
 function getNumericGraphemeTableOffsetNoBoundsChecks(code: number): number {
 	// Get the level index item from the high 11 bits of the code point.
 	let index = readUInt8(numericGraphemeLevel1Index, code >> 9);
