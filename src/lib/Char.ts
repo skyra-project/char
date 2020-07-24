@@ -5,17 +5,6 @@
 import * as CharUnicodeInfo from './CharUnicodeInfo';
 import { UnicodeCategory } from './UnicodeCategory';
 
-/**
- * The maximum character value.
- * @since 1.0.0
- */
-export const kMaxValue = 0xffff;
-/**
- * The minimum character value.
- * @since 1.0.0
- */
-export const kMinValue = 0x00;
-
 /** @hidden */
 const kIsWhiteSpaceFlag = 0x80;
 

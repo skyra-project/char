@@ -2,8 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // https://github.com/dotnet/runtime/blob/master/src/libraries/System.Runtime/tests/System/CharTests.cs
 
-import { getCode } from '../src';
-import { getNumericValue } from '../src/lib/CharUnicodeInfo';
+import { getCode, getNumericValue } from '../src';
 import { display } from './lib/common';
 
 describe('getNumericValue', () => {

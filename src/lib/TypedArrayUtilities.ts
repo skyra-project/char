@@ -1,4 +1,3 @@
-/* istanbul ignore next: platform specific */
 /** @hidden */
 function endianness(): 'BE' | 'LE' {
 	const a = new ArrayBuffer(2);
@@ -38,7 +37,6 @@ export function readUInt16LE(array: Uint8Array, offset: number) {
 }
 
 /** @hidden */
-/* istanbul ignore next: platform specific */
 function readDoubleBackwards(array: Uint8Array, offset: number) {
 	uInt8Float64Array[7] = array[offset];
 	uInt8Float64Array[6] = array[offset + 1];
@@ -51,7 +49,6 @@ function readDoubleBackwards(array: Uint8Array, offset: number) {
 	return float64Array[0];
 }
 
-/* istanbul ignore next: platform specific */
 /** @hidden */
 function readDoubleForwards(array: Uint8Array, offset: number) {
 	uInt8Float64Array[0] = array[offset];
@@ -65,6 +62,5 @@ function readDoubleForwards(array: Uint8Array, offset: number) {
 	return float64Array[0];
 }
 
-/* istanbul ignore next: platform specific */
 /** @hidden */
 export const readDoubleLE = bigEndian ? readDoubleBackwards : readDoubleForwards;
