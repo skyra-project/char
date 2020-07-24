@@ -1,4 +1,5 @@
 {
+	"inputFiles": ["./src"],
 	"out": "./docs/",
 	"readme": "./README.md",
 	"name": "@skyra/char",
