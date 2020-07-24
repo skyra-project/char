@@ -1,6 +1,5 @@
 import { resolve as resolveDir } from 'path';
 import cleaner from 'rollup-plugin-cleaner';
-import nodePolyfills from 'rollup-plugin-node-polyfills';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
@@ -31,9 +30,8 @@ export default {
 			targets: ['./dist/']
 		}),
 		typescript({ tsconfig: resolveDir(__dirname, 'src', 'tsconfig.json') }),
-		nodePolyfills({ sourceMap: true, include: ['buffer'] }),
 		terser({
-			ecma: 2018,
+			ecma: 2019,
 			// This will ensure that whenever Rollup is in watch (dev) mode, console logs will not be removed
 			// eslint-disable-next-line @typescript-eslint/naming-convention
 			compress: { drop_console: !Reflect.has(process.env, 'ROLLUP_WATCH') },
