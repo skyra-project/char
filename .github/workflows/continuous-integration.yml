@@ -94,9 +94,7 @@ jobs:
             - name: Install Dependencies
               run: yarn --ignore-scripts --frozen-lockfile
             - name: Build Code
-              uses: icrawl/action-tsc@v1
-              with:
-                  build: src
+              run: yarn build
 
     Upload_Coverage_Report:
         name: Upload coverage report to coveralls
