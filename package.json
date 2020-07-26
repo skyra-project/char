@@ -1,6 +1,6 @@
 {
 	"name": "@skyra/char",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A character utility library with ASCII, Latin-1, and UTF-8 support based on .NET's Char.",
 	"author": "@skyra",
 	"license": "MIT",
