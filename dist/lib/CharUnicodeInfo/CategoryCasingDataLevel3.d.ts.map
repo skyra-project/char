@@ -1,1 +1,1 @@
-{"version":3,"file":"CategoryCasingDataLevel3.d.ts","sourceRoot":"","sources":["../../src/lib/CharUnicodeInfo/CategoryCasingDataLevel3.ts"],"names":[],"mappings":"AAIA,cAAc;AAEd,eAAO,MAAM,yBAAyB,YA4rBpC,CAAC"}
+{"version":3,"file":"CategoryCasingDataLevel3.d.ts","sourceRoot":"","sources":["../../../src/lib/CharUnicodeInfo/CategoryCasingDataLevel3.ts"],"names":[],"mappings":"AAIA,cAAc;AAEd,eAAO,MAAM,yBAAyB,YA4rBpC,CAAC"}

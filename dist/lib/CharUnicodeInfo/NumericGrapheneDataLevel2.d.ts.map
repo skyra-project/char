@@ -1,1 +1,1 @@
-{"version":3,"file":"NumericGrapheneDataLevel2.d.ts","sourceRoot":"","sources":["../../src/lib/CharUnicodeInfo/NumericGrapheneDataLevel2.ts"],"names":[],"mappings":"AAIA,cAAc;AAEd,eAAO,MAAM,0BAA0B,YAqTrC,CAAC"}
+{"version":3,"file":"NumericGrapheneDataLevel2.d.ts","sourceRoot":"","sources":["../../../src/lib/CharUnicodeInfo/NumericGrapheneDataLevel2.ts"],"names":[],"mappings":"AAIA,cAAc;AAEd,eAAO,MAAM,0BAA0B,YAqTrC,CAAC"}

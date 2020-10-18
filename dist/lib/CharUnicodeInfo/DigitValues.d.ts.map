@@ -1,1 +1,1 @@
-{"version":3,"file":"DigitValues.d.ts","sourceRoot":"","sources":["../../src/lib/CharUnicodeInfo/DigitValues.ts"],"names":[],"mappings":"AAIA,cAAc;AAEd,eAAO,MAAM,WAAW,YAatB,CAAC"}
+{"version":3,"file":"DigitValues.d.ts","sourceRoot":"","sources":["../../../src/lib/CharUnicodeInfo/DigitValues.ts"],"names":[],"mappings":"AAIA,cAAc;AAEd,eAAO,MAAM,WAAW,YAatB,CAAC"}
