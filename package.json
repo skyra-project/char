@@ -31,22 +31,24 @@
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",
 		"@commitlint/config-conventional": "^11.0.0",
-		"@skyra/eslint-config": "^5.3.3",
+		"@sapphire/eslint-config": "^1.1.0",
+		"@sapphire/prettier-config": "^1.0.2",
+		"@sapphire/ts-config": "^1.0.3",
 		"@types/jest": "^26.0.19",
-		"@types/node": "^14.14.10",
-		"@typescript-eslint/eslint-plugin": "^4.9.0",
-		"@typescript-eslint/parser": "^4.9.0",
+		"@types/node": "^14.14.14",
+		"@typescript-eslint/eslint-plugin": "^4.11.0",
+		"@typescript-eslint/parser": "^4.11.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^7.14.0",
-		"eslint-config-prettier": "^7.0.0",
+		"eslint": "^7.16.0",
+		"eslint-config-prettier": "^7.1.0",
 		"eslint-plugin-prettier": "^3.2.0",
-		"husky": "^4.3.5",
+		"husky": "^4.3.6",
 		"jest": "^26.6.3",
 		"jest-circus": "^26.6.3",
-		"lint-staged": "^10.5.2",
+		"lint-staged": "^10.5.3",
 		"prettier": "^2.2.1",
 		"pretty-quick": "^3.1.0",
-		"rollup": "^2.33.3",
+		"rollup": "^2.35.1",
 		"rollup-plugin-cleaner": "^1.0.0",
 		"rollup-plugin-terser": "^7.0.2",
 		"rollup-plugin-typescript2": "^0.29.0",
@@ -101,11 +103,12 @@
 		"access": "public"
 	},
 	"resolutions": {
-		"acorn": "^7.3.1",
-		"minimist": "^1.2.2",
+		"acorn": "^8.0.4",
+		"minimist": "^1.2.5",
 		"kind-of": "^6.0.3",
 		"jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
 		"jest-jasmine2": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
-		"dot-prop": "^5.2.0"
-	}
+		"dot-prop": "^6.0.1"
+	},
+	"prettier": "@sapphire/prettier-config"
 }
