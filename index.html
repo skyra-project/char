@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for @skyra/char">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -47,12 +48,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
-			<h1>@skyra/char</h1>
+			<h1>Project @skyra/char</h1>
 		</div>
 	</div>
 </header>
@@ -74,23 +70,23 @@
 				<p><strong>Table of Contents</strong></p>
 				<ul>
 					<li><a href="#skyrachar">@skyra/char</a><ul>
-							<li><a href="#about">About</a></li>
+							<li>  <a href="#about">About</a></li>
 							<li><a href="#installation-and-usage">Installation and Usage</a><ul>
 									<li><a href="#package-managers">Package managers</a><ul>
-											<li><a href="#usage">Usage</a></li>
+											<li>  <a href="#usage">Usage</a></li>
 										</ul>
 									</li>
 									<li><a href="#browser-build">Browser build</a><ul>
-											<li><a href="#usage-1">Usage</a></li>
+											<li>  <a href="#usage-1">Usage</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
 							<li><a href="#meta">Meta</a><ul>
-									<li><a href="#license">License</a></li>
-									<li><a href="#contributing">Contributing</a></li>
-									<li><a href="#buy-us-some-doughnuts">Buy us some doughnuts</a></li>
-									<li><a href="#contributors-%E2%9C%A8">Contributors ✨</a></li>
+									<li>  <a href="#license">License</a></li>
+									<li>  <a href="#contributing">Contributing</a></li>
+									<li>  <a href="#buy-us-some-doughnuts">Buy us some doughnuts</a></li>
+									<li>  <a href="#contributors-%E2%9C%A8">Contributors ✨</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -102,7 +98,7 @@
 				<ul>
 					<li>@skyra/char is a character utility library with ASCII, Latin-1, and UTF-8 support based on <a href="https://github.com/dotnet">.NET</a>&#39;s <code>char</code> struct, all credits to the
 					<a href="https://github.com/dotnet">.NET</a> community and thanks to the <a href="https://discord.gg/csharp">Discord C# Community</a> for helping us understand the low-level unsafe logic.</li>
-					<li>Supports both NodeJS and Browsers by providing CommonJS, ES Module and UMD bundles.</li>
+					<li>  Supports both NodeJS and Browsers by providing CommonJS, ES Module and UMD bundles.</li>
 				</ul>
 				<a href="#installation-and-usage" id="installation-and-usage" style="color: inherit; text-decoration: none;">
 					<h2>Installation and Usage</h2>
@@ -110,25 +106,30 @@
 				<a href="#package-managers" id="package-managers" style="color: inherit; text-decoration: none;">
 					<h3>Package managers</h3>
 				</a>
-				<pre><code class="language-bash">yarn add @skyra/char
-<span class="hljs-comment"># or npm install @skyra/char</span></code></pre>
+				<pre><code class="language-bash"><span style="color: #000000">yarn add @skyra/char</span>
+<span style="color: #008000"># or npm install @skyra/char</span>
+</code></pre>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h4>Usage</h4>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> { fromCode } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@skyra/char&#x27;</span>);</code></pre>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { fromCode } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@skyra/char&#x27;</span>;</code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">fromCode</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@skyra/char&#039;</span><span style="color: #000000">);</span>
+</code></pre>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">fromCode</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@skyra/char&#039;</span><span style="color: #000000">;</span>
+</code></pre>
 				<a href="#browser-build" id="browser-build" style="color: inherit; text-decoration: none;">
 					<h3>Browser build</h3>
 				</a>
 				<p>If you want to use the browser build you can pull it directly via unpkg. Note that when using a Framework such as React, Vue or Angular we recommend you refer to <a href="#package-managers">the package managers section.</a></p>
-				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://unpkg.com/@skyra/char&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<pre><code class="language-html"><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@skyra/char&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+</code></pre>
 				<a href="#usage-1" id="usage-1" style="color: inherit; text-decoration: none;">
 					<h4>Usage</h4>
 				</a>
 				<p>The UMD module is exported as <code>SkyraChar</code>:</p>
-				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
-    SkyraChar.fromCode();
-<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<pre><code class="language-html"><span style="color: #800000">&lt;script&gt;</span>
+<span style="color: #000000FF">    </span><span style="color: #001080">SkyraChar</span><span style="color: #000000FF">.</span><span style="color: #795E26">fromCode</span><span style="color: #000000FF">();</span>
+<span style="color: #800000">&lt;/script&gt;</span>
+</code></pre>
 				<a href="#meta" id="meta" style="color: inherit; text-decoration: none;">
 					<h2>Meta</h2>
 				</a>
@@ -211,8 +212,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
@@ -222,61 +223,67 @@
 						<a href="enums/unicodecategory.html" class="tsd-kind-icon">Unicode<wbr>Category</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#fromcode" class="tsd-kind-icon">from<wbr>Code</a>
+						<a href="modules.html#fromcode" class="tsd-kind-icon">from<wbr>Code</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#getcode" class="tsd-kind-icon">get<wbr>Code</a>
+						<a href="modules.html#getcode" class="tsd-kind-icon">get<wbr>Code</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#isascii" class="tsd-kind-icon">is<wbr>Ascii</a>
+						<a href="modules.html#getnumericvalue" class="tsd-kind-icon">get<wbr>Numeric<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#iscontrol" class="tsd-kind-icon">is<wbr>Control</a>
+						<a href="modules.html#getunicodecategory" class="tsd-kind-icon">get<wbr>Unicode<wbr>Category</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#isdigit" class="tsd-kind-icon">is<wbr>Digit</a>
+						<a href="modules.html#isascii" class="tsd-kind-icon">is<wbr>Ascii</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#ishighsurrogate" class="tsd-kind-icon">is<wbr>High<wbr>Surrogate</a>
+						<a href="modules.html#iscontrol" class="tsd-kind-icon">is<wbr>Control</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#islatin1" class="tsd-kind-icon">is<wbr>Latin1</a>
+						<a href="modules.html#isdigit" class="tsd-kind-icon">is<wbr>Digit</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#isletter" class="tsd-kind-icon">is<wbr>Letter</a>
+						<a href="modules.html#ishighsurrogate" class="tsd-kind-icon">is<wbr>High<wbr>Surrogate</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#isletterordigit" class="tsd-kind-icon">is<wbr>Letter<wbr>OrDigit</a>
+						<a href="modules.html#islatin1" class="tsd-kind-icon">is<wbr>Latin1</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#islowsurrogate" class="tsd-kind-icon">is<wbr>Low<wbr>Surrogate</a>
+						<a href="modules.html#isletter" class="tsd-kind-icon">is<wbr>Letter</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#islower" class="tsd-kind-icon">is<wbr>Lower</a>
+						<a href="modules.html#isletterordigit" class="tsd-kind-icon">is<wbr>Letter<wbr>OrDigit</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a>
+						<a href="modules.html#islowsurrogate" class="tsd-kind-icon">is<wbr>Low<wbr>Surrogate</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#ispunctuation" class="tsd-kind-icon">is<wbr>Punctuation</a>
+						<a href="modules.html#islower" class="tsd-kind-icon">is<wbr>Lower</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#isseparator" class="tsd-kind-icon">is<wbr>Separator</a>
+						<a href="modules.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#issurrogate" class="tsd-kind-icon">is<wbr>Surrogate</a>
+						<a href="modules.html#ispunctuation" class="tsd-kind-icon">is<wbr>Punctuation</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#issurrogatepair" class="tsd-kind-icon">is<wbr>Surrogate<wbr>Pair</a>
+						<a href="modules.html#isseparator" class="tsd-kind-icon">is<wbr>Separator</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#issymbol" class="tsd-kind-icon">is<wbr>Symbol</a>
+						<a href="modules.html#issurrogate" class="tsd-kind-icon">is<wbr>Surrogate</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#isupper" class="tsd-kind-icon">is<wbr>Upper</a>
+						<a href="modules.html#issurrogatepair" class="tsd-kind-icon">is<wbr>Surrogate<wbr>Pair</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#iswhitespace" class="tsd-kind-icon">is<wbr>White<wbr>Space</a>
+						<a href="modules.html#issymbol" class="tsd-kind-icon">is<wbr>Symbol</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isupper" class="tsd-kind-icon">is<wbr>Upper</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#iswhitespace" class="tsd-kind-icon">is<wbr>White<wbr>Space</a>
 					</li>
 				</ul>
 			</nav>
