@@ -654,10 +654,10 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@sapphire/eslint-config@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@sapphire/eslint-config/-/eslint-config-2.0.0.tgz#33d07dfe37b583010fbc32c555e2ae5e9ff4de68"
-  integrity sha512-f/tNgR9nP8Tjb0MdQ9OjKnbSfTQGJFWGlX1dUb+o0vW3uwx0J2IBXBslCn1rsuz1mzp7XsVzj2jSxyASBugyUQ==
+"@sapphire/eslint-config@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@sapphire/eslint-config/-/eslint-config-2.0.1.tgz#5f202a6ea070eabdbaf60aed0af204829bfccfe6"
+  integrity sha512-agDGE0zLgyWRcFU9gmmKqWZWTwqFrkBuIQr3J5zeIkRGao7YW/72+XnEXRKbz3gBbawnPC4/17p2Lf75vdp9/Q==
 
 "@sapphire/prettier-config@^1.0.5":
   version "1.0.5"
@@ -752,15 +752,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@26.x":
-  version "26.0.19"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.19.tgz#e6fa1e3def5842ec85045bd5210e9bb8289de790"
-  integrity sha512-jqHoirTG61fee6v6rwbnEuKhpSKih0tuhqeFbCmMmErhtu3BYlOZaXWjffgOstMM4S/3iQD31lI5bGLTrs97yQ==
-  dependencies:
-    jest-diff "^26.0.0"
-    pretty-format "^26.0.0"
-
-"@types/jest@^26.0.20":
+"@types/jest@26.x", "@types/jest@^26.0.20":
   version "26.0.20"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.20.tgz#cd2f2702ecf69e86b586e1f5223a60e454056307"
   integrity sha512-9zi2Y+5USJRxd0FsahERhBwlcvFh6D2GLQnY2FH2BzK8J9s9omvNHIbvABwIluXa0fD8XVKMLTO0aOEuUfACAA==
@@ -783,12 +775,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
   integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
 
-"@types/node@*":
-  version "14.14.14"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.14.tgz#f7fd5f3cc8521301119f63910f0fb965c7d761ae"
-  integrity sha512-UHnOPWVWV1z+VV8k6L1HhG7UbGBgIdghqF3l9Ny9ApPghbjICXkUJSd/b9gOgQfjM1r+37cipdw/HJ3F6ICEnQ==
-
-"@types/node@^14.14.21":
+"@types/node@*", "@types/node@^14.14.21":
   version "14.14.21"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.21.tgz#d934aacc22424fe9622ebf6857370c052eae464e"
   integrity sha512-cHYfKsnwllYhjOzuC5q1VpguABBeecUp24yFluHpn/BQaVxB1CuQ1FSRZCzrPxrkIfWISXV2LbeoBthLWg0+0A==
