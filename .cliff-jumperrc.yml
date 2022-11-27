@@ -1,0 +1,6 @@
+name: char
+packagePath: .
+org: skyra-project
+monoRepo: false
+commitMessageTemplate: 'chore(release): release {{new-version}}'
+tagTemplate: v{{new-version}}
