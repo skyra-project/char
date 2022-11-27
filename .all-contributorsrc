@@ -16,18 +16,11 @@
 			"contributions": ["code", "test", "ideas", "infra"]
 		},
 		{
-			"login": "Favna",
+			"login": "fav",
 			"name": "Jeroen Claassens",
 			"avatar_url": "https://avatars3.githubusercontent.com/u/4019718?v=4",
 			"profile": "https://favware.tech/",
 			"contributions": ["infra", "test", "doc", "platform"]
-		},
-		{
-			"login": "QuantumlyTangled",
-			"name": "Nejc Drobnic",
-			"avatar_url": "https://avatars1.githubusercontent.com/u/7919610?v=4",
-			"profile": "https://quantumlytangled.com/",
-			"contributions": ["test"]
 		},
 		{
 			"login": "vladfrangu",
@@ -35,6 +28,13 @@
 			"avatar_url": "https://avatars3.githubusercontent.com/u/17960496?v=4",
 			"profile": "https://github.com/vladfrangu",
 			"contributions": ["code"]
+		},
+		{
+			"login": "Quantumlyy",
+			"name": "Nejc Drobnič",
+			"avatar_url": "https://avatars.githubusercontent.com/u/7919610?v=4",
+			"profile": "https://quantumly.dev/",
+			"contributions": ["test"]
 		}
 	],
 	"contributorsPerLine": 7
