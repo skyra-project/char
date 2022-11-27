@@ -1,5 +1,4 @@
 import { defineConfig } from 'tsup';
-import { nodeModulesPolyfillPlugin } from 'esbuild-plugins-node-modules-polyfill';
 
 export default defineConfig({
 	clean: true,
@@ -13,6 +12,5 @@ export default defineConfig({
 	tsconfig: 'src/tsconfig.json',
 	keepNames: true,
 	globalName: 'SkyraChar',
-	esbuildPlugins: [nodeModulesPolyfillPlugin()],
 	treeshake: true
 });
