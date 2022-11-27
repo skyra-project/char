@@ -116,6 +116,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://favware.tech/"><img src="https://avatars3.githubusercontent.com/u/4019718?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeroen Claassens</b></sub></a><br /><a href="#infra-fav" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/skyra-project/char/commits?author=fav" title="Tests">⚠️</a> <a href="https://github.com/skyra-project/char/commits?author=fav" title="Documentation">📖</a> <a href="#platform-fav" title="Packaging/porting to new platform">📦</a></td>
     <td align="center"><a href="https://github.com/vladfrangu"><img src="https://avatars3.githubusercontent.com/u/17960496?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vlad Frangu</b></sub></a><br /><a href="https://github.com/skyra-project/char/commits?author=vladfrangu" title="Code">💻</a></td>
     <td align="center"><a href="https://quantumly.dev/"><img src="https://avatars.githubusercontent.com/u/7919610?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nejc Drobnič</b></sub></a><br /><a href="https://github.com/skyra-project/char/commits?author=Quantumlyy" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/apps/dependabot"><img src="https://avatars.githubusercontent.com/in/29110?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dependabot[bot]</b></sub></a><br /><a href="#maintenance-dependabot[bot]" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
