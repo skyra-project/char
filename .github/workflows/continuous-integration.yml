@@ -45,7 +45,7 @@ jobs:
       - name: Typecheck And Build Code
         run: yarn typecheck && yarn build
       - name: Upload dist folder to artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist/
@@ -96,7 +96,7 @@ jobs:
       - name: Run tests
         run: yarn test
       - name: Store code coverage report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: matrix.node == 18
         with:
           name: coverage
