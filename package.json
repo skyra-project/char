@@ -97,5 +97,5 @@
 		"access": "public"
 	},
 	"prettier": "@sapphire/prettier-config",
-	"packageManager": "yarn@4.0.2"
+	"packageManager": "yarn@4.1.0"
 }
