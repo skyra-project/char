@@ -1,16 +1,35 @@
-import { defineConfig } from 'tsup';
+import { defineConfig, Options } from 'tsup';
 
-export default defineConfig({
+const baseOptions: Options = {
 	clean: true,
 	dts: true,
 	entry: ['src/index.ts'],
-	format: ['esm', 'cjs', 'iife'],
 	minify: false,
 	skipNodeModulesBundle: true,
 	sourcemap: true,
 	target: 'es2019',
 	tsconfig: 'src/tsconfig.json',
 	keepNames: true,
-	globalName: 'SkyraChar',
 	treeshake: true
-});
+};
+
+export default [
+	defineConfig({
+		...baseOptions,
+		outDir: 'dist/cjs',
+		format: 'cjs',
+		outExtension: () => ({ js: '.cjs' })
+	}),
+	defineConfig({
+		...baseOptions,
+		outDir: 'dist/esm',
+		format: 'esm',
+		outExtension: () => ({ js: '.mjs' })
+	}),
+	defineConfig({
+		...baseOptions,
+		outDir: 'dist/iife',
+		format: 'iife',
+		globalName: 'SkyraChar'
+	})
+];
