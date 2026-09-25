@@ -57,7 +57,7 @@
 		"typedoc": "^0.28.5",
 		"typescript": "^5.8.3",
 		"vite": "^7.2.2",
-		"vitest": "^3.2.4"
+		"vitest": "^4.0.0"
 	},
 	"resolutions": {
 		"ansi-regex": "^5.0.1",
