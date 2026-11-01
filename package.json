@@ -52,7 +52,7 @@
 		"eslint-plugin-prettier": "^5.5.4",
 		"lint-staged": "^16.2.6",
 		"prettier": "^3.6.2",
-		"standard-version": "^9.5.0",
+		"commit-and-tag-version": "^9.5.0",
 		"tsup": "^8.5.0",
 		"typedoc": "^0.28.5",
 		"typescript": "^5.8.3",
